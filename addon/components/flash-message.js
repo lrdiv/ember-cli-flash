@@ -72,7 +72,9 @@ export default Component.extend({
   }),
 
   click() {
-    this._destroyFlashMessage();
+    if (get(this, 'flash.clickable')) {
+      this._destroyFlashMessage();
+    }
   },
 
   willDestroy() {
